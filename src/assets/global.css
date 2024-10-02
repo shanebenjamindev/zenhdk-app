@@ -1,0 +1,8 @@
+.green {
+    background-color: var(--primary-color);
+
+    a,
+    span {
+        color: var(--text-light) !important;
+    }
+}

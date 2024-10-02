@@ -1,0 +1,23 @@
+.form-bottom {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+        color: var(--primary-color) !important;
+
+        &:hover {
+            color: var(--secondary-color) !important;
+        }
+    }
+
+
+
+}
+
+.btn-login {
+    background-color: var(--primary-color);
+
+    &:hover {
+        background-color: var(--secondary-color) !important;
+    }
+}

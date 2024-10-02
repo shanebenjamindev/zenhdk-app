@@ -1,0 +1,13 @@
+.bg {
+    background-image: url("../../../public/assets/images/a-neon-city-4m.jpg");
+    height: 100dvh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-form {}
