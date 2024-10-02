@@ -6,13 +6,13 @@ import { ShoppingCartOutlined } from "@ant-design/icons"
 export default function Dashboard() {
 
     return (
-        <>
+        <div style={{ minHeight: "90dvh", display: "flex", justifyContent: "center", alignItems: "center" }}>
             <Link to="/sales">
                 <Button >
-                    <ShoppingCartOutlined /> Hóa đơn
+                    <ShoppingCartOutlined /> Thêm Mới Hóa Đơn
                 </Button>
             </Link>
-        </>
+        </div>
     )
 
 }

@@ -1,12 +1,75 @@
 {
     "data": [
         {
+            "columns": {
+                "users": [
+                    {
+                        "title": "ID",
+                        "dataIndex": "id",
+                        "key": "id"
+                    },
+                    {
+                        "title": "Email",
+                        "dataIndex": "email",
+                        "key": "email"
+                    },
+                    {
+                        "title": "Password",
+                        "dataIndex": "password",
+                        "key": "password"
+                    },
+                    {
+                        "title": "Name",
+                        "dataIndex": "name",
+                        "key": "name"
+                    },
+                    {
+                        "title": "Role",
+                        "dataIndex": "role",
+                        "key": "role"
+                    }
+                ],
+                "products": [
+                    {
+                        "title": "Mã hàng hóa",
+                        "dataIndex": "code",
+                        "key": "code"
+                    },
+                    {
+                        "title": "Tên hàng hóa",
+                        "dataIndex": "name",
+                        "key": "name"
+                    },
+                    {
+                        "title": "ĐVT",
+                        "dataIndex": "unit",
+                        "key": "unit"
+                    }
+                ],
+                "banks": [
+                    {
+                        "title": "Mã Quỹ",
+                        "dataIndex": "code",
+                        "key": "code"
+                    },
+                    {
+                        "title": "Tên Quỹ",
+                        "dataIndex": "name",
+                        "key": "name"
+                    },
+                    {
+                        "title": "Chi Nhánh",
+                        "dataIndex": "branch",
+                        "key": "branch"
+                    }
+                ]
+            },
             "users": [
                 {
                     "id": 1,
                     "email": "admin@gmail.com",
                     "password": "1",
-                    "name": "John Doe",
+                    "name": "Giang Vo",
                     "role": "admin"
                 },
                 {
@@ -22,6 +85,70 @@
                     "password": "password789",
                     "name": "Alice Johnson",
                     "role": "user"
+                }
+            ],
+            "products": [
+                {
+                    "id": "DV01",
+                    "name": "Dịch vụ sửa chữa điện máy",
+                    "unit": "KG"
+                },
+                {
+                    "id": "HH01",
+                    "name": "Hàng hóa 01",
+                    "unit": "m"
+                },
+                {
+                    "id": "HH02",
+                    "name": "Hàng hóa 02",
+                    "unit": "Kg"
+                },
+                {
+                    "id": "HH03",
+                    "name": "Hàng hóa 03",
+                    "unit": "CHAI"
+                },
+                {
+                    "id": "VT02",
+                    "name": "Vật tư 02",
+                    "unit": "CAI"
+                },
+                {
+                    "id": "VT1",
+                    "name": "Vật tư 1",
+                    "unit": "CAI"
+                }
+            ],
+            "banks": [
+                {
+                    "id": 1,
+                    "name": "Ngân hàng TMCP Á Châu - ACB",
+                    "code": "ACB",
+                    "branch": "Chi nhánh Hà Nội"
+                },
+                {
+                    "id": 2,
+                    "name": "Ngân hàng NN & PT Nông Thôn Việt Nam - Agribank",
+                    "code": "AGR",
+                    "branch": "Chi nhánh TP.HCM"
+                },
+                {
+                    "id": 3,
+                    "name": "Ngân hàng TMCP Ngoại Thương Việt Nam - Vietcombank",
+                    "code": "VCB",
+                    "branch": "Chi nhánh Đà Nẵng"
+                },
+                {
+                    "id": 4,
+                    "name": "Ngân hàng TMCP Quân Đội - MB Bank",
+                    "code": "MB",
+                    "branch": "Chi nhánh Hải Phòng"
+                },
+                {
+                    "id": 5,
+                    "name": "Ngân hàng TMCP Đầu Tư và Phát Triển Việt Nam - BIDV",
+                    "code": "BIDV",
+                    "branch": "Chi nhánh Cần Thơ"
                 }
             ]
         }

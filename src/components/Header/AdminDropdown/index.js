@@ -1,65 +1,49 @@
-import React, { useState } from 'react';
-import { Dropdown } from 'semantic-ui-react';
-import { Server, Key, SignOut } from 'react-icons/fa';
+import React from 'react';
+import { DownOutlined, SmileOutlined } from '@ant-design/icons';
+import { Dropdown, Space } from 'antd';
+import { FaServer, FaKey, FaSignOutAlt } from 'react-icons/fa';
+import useAuth from '../../../hooks/useAuth';
 
 const AdminDropdown = () => {
-    const [active, setActive] = useState(false);
+    const { logout, user } = useAuth();
 
-    const handleDropdownClick = () => {
-        setActive(!active);
+    const handleOptionSelect = ({ key }) => {
+        if (key === 'Đăng xuất') {
+            logout();
+        } else {
+            console.log(`Selected option: ${key}`);
+        }
     };
 
-    const handleOptionSelect = (option) => {
-        console.log(`Selected option: ${option}`);
-        setActive(false); // Close dropdown after selection
+    const menuItems = [
+        {
+            key: 'Bảo trì dữ liệu',
+            label: 'Bảo trì dữ liệu',
+            icon: <FaServer />,
+        },
+        {
+            key: 'Đổi mật khẩu',
+            label: 'Đổi mật khẩu',
+            icon: <FaKey />,
+        },
+        {
+            key: 'Đăng xuất',
+            label: 'Đăng xuất',
+            icon: <FaSignOutAlt />,
+        },
+    ];
+
+    const menu = {
+        items: menuItems,
+        onClick: handleOptionSelect,
     };
 
     return (
-        <div>
-            <Dropdown
-                role="listbox"
-                aria-expanded={active}
-                className={`ui ${active ? 'active' : ''} visible item dropdown`}
-                tabIndex="0"
-                onClick={handleDropdownClick}
-            >
-                <div
-                    aria-atomic="true"
-                    aria-live="polite"
-                    role="alert"
-                    className="divider text"
-                >
-                    Admin
-                </div>
-                <i aria-hidden="true" className="dropdown icon"></i>
-                <div className={`left menu transition ${active ? 'visible' : ''}`}>
-                    <div
-                        role="option"
-                        className="item"
-                        onClick={() => handleOptionSelect('Bảo trì dữ liệu')}
-                    >
-                        <Server aria-hidden="true" className="icon" />
-                        <label>Bảo trì dữ liệu</label>
-                    </div>
-                    <div
-                        role="option"
-                        className="item"
-                        onClick={() => handleOptionSelect('Đổi mật khẩu')}
-                    >
-                        <Key aria-hidden="true" className="icon" />
-                        <label>Đổi mật khẩu</label>
-                    </div>
-                    <div
-                        role="option"
-                        className="item"
-                        onClick={() => handleOptionSelect('Đăng xuất')}
-                    >
-                        <SignOut aria-hidden="true" className="icon" />
-                        <label>Đăng xuất</label>
-                    </div>
-                </div>
-            </Dropdown>
-        </div>
+        <Dropdown menu={menu} trigger={['hover']}>
+            <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
+                {user?.name || 'Admin'}  <i aria-hidden="true" className="dropdown icon"></i>
+            </a>
+        </Dropdown>
     );
 };
 

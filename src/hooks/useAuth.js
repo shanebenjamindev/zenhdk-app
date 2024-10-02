@@ -1,24 +1,27 @@
-// hooks/useAuth.js
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const useAuth = () => {
+    const [user, setUser] = useState(null); 
     const navigate = useNavigate();
 
     useEffect(() => {
-        const user = localStorage.getItem('user');
-        if (!user) {
-            // If there is no user, redirect to the login page
+        const storedUser = localStorage.getItem('user');
+        if (!storedUser) {
+           
             navigate("/login");
+        } else {
+            setUser(JSON.parse(storedUser)); 
         }
     }, [navigate]);
 
     const logout = () => {
         localStorage.removeItem('user');
+        setUser(null); 
         navigate("/login");
     };
 
-    return { logout };
+    return { user, logout };
 };
 
 export default useAuth;

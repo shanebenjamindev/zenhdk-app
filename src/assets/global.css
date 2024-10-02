@@ -6,3 +6,8 @@
         color: var(--text-light) !important;
     }
 }
+
+.container-fluid {
+    width: 99%;
+    margin: auto;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu, Dropdown } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './style.css';
 
 const AppMenu = () => {
@@ -69,8 +69,8 @@ const AppMenu = () => {
     return (
         <div style={{ top: '50px' }}>
             <Menu mode="horizontal" className="green" >
-                <Menu.Item key="/">
-                    <a href="#/">Trang chủ</a>
+                <Menu.Item key="/dashboard">
+                    <Link to="/dashboard">Trang chủ</Link>
                 </Menu.Item>
                 <Menu.Item key="system">
                     <Dropdown overlay={systemMenu} trigger={['click']}>
